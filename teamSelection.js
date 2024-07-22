@@ -1,6 +1,8 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, PermissionFlagsBits, ChannelType } = require('discord.js');
 
 const handleTeamSelection = async (channel) => {
+  const descriptionText = `**Team Yellow runs Tuesdays and Thursdays from 8:30pm to 11pm**\n**Team focus is currently: Mythic 2 Bosses/week**`;
+
   const row = new ActionRowBuilder()
     .addComponents(
       new ButtonBuilder()
@@ -25,7 +27,7 @@ const handleTeamSelection = async (channel) => {
   const botMessage = messages.find(msg => msg.author.bot && msg.content.includes('Which team are you interested in?'));
 
   if (!botMessage) {
-    await channel.send({ content: 'Which team are you interested in?', components: [row] });
+    await channel.send({ content: `${descriptionText}\n\nWhich team are you interested in?`, components: [row] });
   }
 };
 
