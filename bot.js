@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const { handleTeamSelection, handleInteraction } = require('./teamSelection');
 const axios = require('axios');
