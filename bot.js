@@ -3,6 +3,16 @@ const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const { handleTeamSelection, handleInteraction } = require('./teamSelection');
 const axios = require('axios');
 
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3030;
+
+// your code
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
